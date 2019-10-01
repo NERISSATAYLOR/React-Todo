@@ -1,5 +1,5 @@
 import React from 'react';
-import App from '../../App'
+
 
 class TodoForm extends React.Component {
     constructor() {
@@ -14,13 +14,16 @@ class TodoForm extends React.Component {
     }
     submitTodo = e => {
         e.preventDefault();
-        this.props.addTodo(this.state.todo)
+        this.props.addTodo(this.state.todo);
     }
+
     clearCompleted = () => {
         this.setState({
-            todos: this.state.todos.filter(todos => !todo.completed)
-        })
-    }
+            todos: this.state.todos.filter(todo => !todo.completed)
+        });
+    };
+
+
     render() {
         return (
             <div>
@@ -28,8 +31,15 @@ class TodoForm extends React.Component {
                     <input
                         type="text"
                         name="task"
-                        value={this.state.addTodo}
-                        onChange={this.handleChange}
+                        value={this.task}
+                        onChange={this.handleInputChange}
+                    />
+                    <input
+                        type="number"
+                        name="id"
+                        value={this.id}
+                        onChange={this.handleInputChange}
+
                     />
                     <button type="submit">Add Todo</button>
                 </form>
