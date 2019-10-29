@@ -1,6 +1,9 @@
 import React from 'react';
 import TodoList from './components/TodoComponents/TodoList';
 import TodoForm from './components/TodoComponents/TodoForm';
+import './components/TodoComponents/Todo.css';
+import Todo from './components/TodoComponents/Todo';
+
 const todoData = [{
   task: 'Organize Garage',
   id: 1528817077286,
@@ -23,9 +26,9 @@ class App extends React.Component {
       todos: todoData
     };
   }
-  addTodo = task => {
+  addTodo = todo => {
     const newTodo = {
-      task: task,
+      task: todo,
       id: Date.now(),
       completed: false
     };
@@ -58,7 +61,7 @@ class App extends React.Component {
   };
   handleSubmit = event => {
     event.preventDefault();
-    this.addTodo(this.state.newTodo);
+    this.props.addTodo(this.state.newTodo);
     this.setState({ newTodo: '' });
 
   };
@@ -67,7 +70,7 @@ class App extends React.Component {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
-        <TodoList toggleCompleted={this.toggleCompleted} todos={this.state.todos} />
+        <TodoList todos={this.state.todos} toggleCompleted={this.toggleCompleted} />
         <TodoForm addTodo={this.addTodo} handleChanges={this.handleChanges} handleSubmit={this.handleSubmit} />
         <button>Clear Completed</button>
       </div>
