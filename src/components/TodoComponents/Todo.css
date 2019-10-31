@@ -27,8 +27,7 @@ p {
 	padding-left: 8px;
 	cursor: pointer;
 }
-.todo.completed {
-	background-color: #d17d7c;
+.completed {
+	background-color: blue;
 	color: white;
-	text-decoration: line-through;
 }
