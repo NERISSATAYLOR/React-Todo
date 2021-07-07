@@ -1,0 +1,33 @@
+body {
+	background: rgb(0, 255, 213);
+	width: 45%;
+	text-align: left;
+	margin: 4px 0;
+	padding-left: 8px;
+	cursor: pointer;
+}
+.list {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	max-width: 100%;
+
+	margin: 0 auto;
+}
+p {
+	background-color: white;
+	width: 200px;
+	margin: 20px auto;
+}
+.todo {
+	background-color: #cb8683a0;
+	width: 100%;
+	text-align: left;
+	margin: 4px 0;
+	padding-left: 8px;
+	cursor: pointer;
+}
+.completed {
+	background-color: blue;
+	color: white;
+}
